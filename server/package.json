@@ -1,0 +1,13 @@
+{
+  "name": "icq-messaging-server",
+  "version": "1.0.0",
+  "description": "WebSocket broadcast server for ICQ Messaging",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node --watch index.js"
+  },
+  "dependencies": {
+    "ws": "^8.17.0"
+  }
+}

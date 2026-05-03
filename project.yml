@@ -1,0 +1,34 @@
+# XcodeGen project spec — run `xcodegen generate` to create Messaging.xcodeproj
+name: Messaging
+options:
+  bundleIdPrefix: com.icqmessaging
+  deploymentTarget:
+    iOS: "16.0"
+  defaultConfig: Debug
+
+settings:
+  base:
+    SWIFT_VERSION: "5.9"
+    TARGETED_DEVICE_FAMILY: "1"          # iPhone only
+    SUPPORTS_MACCATALYST: "NO"
+    MARKETING_VERSION: "1.0"
+    CURRENT_PROJECT_VERSION: "1"
+
+targets:
+  Messaging:
+    type: application
+    platform: iOS
+    sources:
+      - path: Messaging
+    info:
+      path: Messaging/Info.plist
+      properties:
+        CFBundleDisplayName: ICQ
+        UILaunchScreen:
+          UIColorName: ""
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
+        NSLocalNetworkUsageDescription: "Used for real-time messaging over WebSocket"
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.icqmessaging.app
