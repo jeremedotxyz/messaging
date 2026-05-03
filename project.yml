@@ -3,7 +3,7 @@ name: Messaging
 options:
   bundleIdPrefix: com.icqmessaging
   deploymentTarget:
-    iOS: "16.0"
+    iOS: "17.0"
   defaultConfig: Debug
 
 settings:

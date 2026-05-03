@@ -41,6 +41,10 @@ class ChatStore: ObservableObject {
             ]),
         ]
 
+        ws.objectWillChange
+            .sink { [weak self] _ in self?.objectWillChange.send() }
+            .store(in: &bag)
+
         ws.inbound
             .sink { [weak self] env in self?.handle(env) }
             .store(in: &bag)

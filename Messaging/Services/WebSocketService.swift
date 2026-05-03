@@ -21,8 +21,12 @@ class WebSocketService: ObservableObject {
     func connect(to url: URL) {
         task = session.webSocketTask(with: url)
         task?.resume()
-        isConnected = true
         listen()
+        task?.sendPing { [weak self] error in
+            DispatchQueue.main.async {
+                self?.isConnected = error == nil
+            }
+        }
     }
 
     func disconnect() {
